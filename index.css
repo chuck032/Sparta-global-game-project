@@ -3,25 +3,70 @@ table {
 }
 
 td {
-  padding: 25px;
-  border: 1px solid black;
-}
-
-.finish {
-  background-color: red;
+  padding: 27px;
 }
 
 .box {
   background-color: blue;
-  border: 1px solid black;
-  height: 20px;
-  width: 20px;
-  /* position: absolute; */
-  top:0px;
-  left:0px;
+  height: 27px;
+  width: 27px;
+  background: url(sprites/knight.png) -6px -1px;
+}
+
+.chest {
+  background-color: yellow;
 
 }
 
 .wall {
   background-color: green;
+
+}
+
+.terrain-grass {
+  width: 27px;
+  height: 27px;
+  background-color: rgba(179,255,64,1);
+}
+
+.tree1 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -5px -79px;
+  background-color: green;
+}
+
+.tree2 {
+ width: 27px;
+ height: 27px;
+ background: url(sprites/tree-variations_0.png) -129px -79px;
+ background-color: green;
+}
+
+.tree3 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -68px -79px;
+  background-color: green;
+}
+
+.tree4 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -192px -79px;
+  background-color: green;
+}
+
+.chestSprite {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/chest_sheet.png) -5px -78px;
+  background-color: rgba(179,255,64,1);
+}
+
+.chestSprite2 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/chest_sheet.png) -5px -4px;
+  background-color: rgba(179,255,64,1);
 }
