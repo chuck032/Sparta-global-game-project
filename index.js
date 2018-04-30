@@ -15,54 +15,65 @@ var rows = [row1, row2, row3, row4, row5, row6];
 var cols = [col1, col2, col3, col4, col5, col6];
 
 var startId = 1
-var start = $('#'+startId);
-
 var currentPosition = $('.box');
-
-
-
-
-
-
 
 $(document).keydown(function(e) {
 
     switch(e.which) {
         case 37: // left
-				$(currentPosition).removeClass('box');
+
 				var newId = startId - 1;
 				var nextPosition = $('#'+newId);
+				if (nextPosition.hasClass('wall')){
+					return;
+				} else {
 				$(nextPosition).addClass('box');
+				$(currentPosition).removeClass('box');
 				currentPosition = nextPosition;
 				startId = newId;
-
+				}
         break;
 
         case 38: // up
-				$(currentPosition).removeClass('box');
+
 				var newId = startId - 10;
 				var nextPosition = $('#'+newId);
+				if (nextPosition.hasClass('wall')){
+					return;
+				} else {
 				$(nextPosition).addClass('box');
+				$(currentPosition).removeClass('box');
 				currentPosition = nextPosition;
 				startId = newId;
+				}
         break;
 
         case 39: // right
-				$(currentPosition).removeClass('box');
+
 				var newId = startId + 1;
 				var nextPosition = $('#'+newId);
+				if (nextPosition.hasClass('wall')){
+					return;
+				} else {
 				$(nextPosition).addClass('box');
+				$(currentPosition).removeClass('box');
 				currentPosition = nextPosition;
 				startId = newId;
+				}
         break;
 
         case 40: // down
-				$(currentPosition).removeClass('box');
+
 				var newId = startId + 10;
 				var nextPosition = $('#'+newId);
+				if (nextPosition.hasClass('wall')){
+					return;
+				} else {
 				$(nextPosition).addClass('box');
+				$(currentPosition).removeClass('box');
 				currentPosition = nextPosition;
 				startId = newId;
+				}
         break;
 
         default: return; // exit for other keys
@@ -70,66 +81,8 @@ $(document).keydown(function(e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
-
-
-
-
-// function findBox(){
-// 		currentPosition = $('.box')
-//
-// 	}
-// 	if (row2.hasClass('box')){
-// 		var boxRow = rows[1];
-// 		return boxRow;
-// 	}
-// 	if (row3.hasClass('box')){
-// 		var boxRow = rows[2];
-// 		return boxRow;
-// 	}
-// 	if (row4.hasClass('box')){
-// 		var boxRow = rows[3];
-// 		return boxRow;
-// 	}
-// 	if (row5.hasClass('box')){
-// 		var boxRow = rows[4];
-// 		return boxRow;
-// 	}
-// 	if (row6.hasClass('box')){
-// 		var boxRow = rows[5];
-// 		return boxRow;
-// 	}
-// }
-
-
-// function findCol(){
-// 	if (col1.hasClass('box')){
-// 		var boxCol = cols[0];
-// 		return boxCol;
-// 	}
-// 	if (col2.hasClass('box')){
-// 		var boxCol = cols[1];
-// 		return boxCol;
-// 	}
-// 	if (col3.hasClass('box')){
-// 		var boxCol = cols[2];
-// 		return boxCol;
-// 	}
-// 	if (col4.hasClass('box')){
-// 		var boxCol = cols[3];
-// 		return boxCol;
-// 	}
-// 	if (row5.hasClass('box')){
-// 		var boxCol = cols[4];
-// 		return boxCol;
-// 	}
-// 	if (col6.hasClass('box')){
-// 		var boxCol = cols[5];
-// 		return boxCol;
-// 	}
-// }
-
-
-// findRow();
-// console.log(findRow());
-// findCol();
-// console.log(findCol());
+function wallColl(){
+	if (nextPosition.hasClass('.wall')){
+		return;
+	}
+}

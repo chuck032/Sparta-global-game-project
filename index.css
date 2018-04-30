@@ -17,6 +17,6 @@ td {
 
 }
 
-.empty {
-  background-color: none;
+.wall {
+  background-color: green;
 }
