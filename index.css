@@ -3,9 +3,14 @@ table {
 }
 
 td {
-  padding: 30px;
+  padding: 25px;
   border: 1px solid black;
 }
+
+.finish {
+  background-color: red;
+}
+
 .box {
   background-color: blue;
   border: 1px solid black;
@@ -19,8 +24,4 @@ td {
 
 .wall {
   background-color: green;
-}
-
-.finish {
-  background-color: red;
 }
