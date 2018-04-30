@@ -20,3 +20,7 @@ td {
 .wall {
   background-color: green;
 }
+
+.finish {
+  background-color: red;
+}

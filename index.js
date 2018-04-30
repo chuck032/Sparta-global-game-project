@@ -14,7 +14,7 @@ var col6 = $('.c6');
 var rows = [row1, row2, row3, row4, row5, row6];
 var cols = [col1, col2, col3, col4, col5, col6];
 
-var startId = 1
+var startId = 23
 var currentPosition = $('.box');
 
 $(document).keydown(function(e) {
@@ -36,7 +36,7 @@ $(document).keydown(function(e) {
 
         case 38: // up
 
-				var newId = startId - 10;
+				var newId = startId - 23;
 				var nextPosition = $('#'+newId);
 				if (nextPosition.hasClass('wall')){
 					return;
@@ -64,7 +64,7 @@ $(document).keydown(function(e) {
 
         case 40: // down
 
-				var newId = startId + 10;
+				var newId = startId + 23;
 				var nextPosition = $('#'+newId);
 				if (nextPosition.hasClass('wall')){
 					return;
@@ -80,9 +80,3 @@ $(document).keydown(function(e) {
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
-
-function wallColl(){
-	if (nextPosition.hasClass('.wall')){
-		return;
-	}
-}
