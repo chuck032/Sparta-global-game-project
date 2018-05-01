@@ -123,7 +123,6 @@ function fKey(){
 function chestItem(){
 	if (currentPosition.is('#29')|| currentPosition.is("#38")){
 		sword = true;
-		console.log("You've found a sword, Your attack is increased +0.2!");
 		currentPosition.removeClass('chest');
 		swordMult = swordMult + 0.2;
 		console.log(swordMult);
@@ -132,7 +131,6 @@ function chestItem(){
 		discoverMult();
 	} if (currentPosition.is('#74')|| currentPosition.is("#264")|| currentPosition.is('#250')){
 		encounter = true;
-		console.log("Enemy encountered!!");
 		currentPosition.removeClass('chest');
 		currentPosition.addClass('chestSprite2');
 		discoverTrap();
@@ -140,7 +138,6 @@ function chestItem(){
 		combatFrame.show();
 	} if (currentPosition.is('#174')|| currentPosition.is("#135")||currentPosition.is('#256')){
 		health = true;
-		console.log("You've found a health potion, your health has increased by 20%");
 		currentPosition.removeClass('chest');
 		healthTotal = healthTotal + 20;
 		console.log(healthTotal);
@@ -149,30 +146,34 @@ function chestItem(){
 		discoverHealth();
 	} if (currentPosition.is("#213")){
 		haveKey = true;
-		console.log("You've found a Key, You can now open the door!");
 		currentPosition.removeClass('chest');
 		currentPosition.addClass('chestSprite2')
 		discoverKey();
 	}
 }
 
+//Function for Door
+function doorOpen(){
+	if (currentPosition.is('#298')) {
+		divBox.html("<h2>Currently under construction!</h2>")
+	}
+}
+
+//Message for chest discoveries
 function discoverMult(){
-divBox.html("<h2>You've disocvered an attack multiplier! Your attacks do 0.2x more damage</h2>")
+divBox.html("<h2>You've discovered an attack multiplier! Your attacks do 0.2x more damage</h2>")
 }
-
 function discoverHealth(){
-divBox.html("<h2>You've disocvered a healthpotion! Your health increased by 20hp</h2>")
+divBox.html("<h2>You've discovered a health potion! Your health increased by 20hp</h2>")
 }
-
 function discoverKey(){
-divBox.html("<h2>You've disocvered a Key! I wonder what it opens</h2>")
+divBox.html("<h2>You've discovered a Key! I wonder what it opens</h2>")
 }
-
 function discoverTrap(){
 divBox.html("<h2>You've walked into a trap! Get ready for combat!</h2>")
 }
 
-
+//Start button for combat
 start.click(function(){
 	turns();
 	if (turn % 2 == 1){
@@ -190,6 +191,7 @@ start.click(function(){
 	}
 });
 
+//Attack button for combat
 attackBtn.click(function(){
 	var swordAtk = (attack*swordMult);
 	if(turn % 2 == 1){
@@ -209,6 +211,7 @@ attackBtn.click(function(){
 	}
 });
 
+//Run away button for combat
 runAway.click(function() {
 	sentenceArray = ['<li>Unable to run away, the enemy has you cornered!</li>',"<li>Looks like you'll have to fight your way out!</li>","<li>Seriously you're trapped</li>", "<li>Please stop...</li>" ]
 	textDesc.append(sentenceArray[clicks]);
@@ -216,6 +219,7 @@ runAway.click(function() {
 	return clicks
 })
 
+//AI attack
 function enemyAtk (){
 		if (healthTotal > 0){
 			healthTotal = healthTotal - 10;
@@ -233,16 +237,19 @@ function enemyAtk (){
 		}
 }
 
+//Function for enemy HP
 function enemyHP(){
 	$("#enemyHP").html("Health: " + enemyhealth);
 }
 enemyHP();
 
+//Function for user HP
 function userHP(){
 	$("#HP").html("Health: " + healthTotal);
 }
 userHP();
 
+//Function for turn counter
 function turns(){
 	if (turn % 2 == 1) {
 		$("#turnCount").html("Your Turn");
@@ -252,11 +259,13 @@ function turns(){
 }
 turns();
 
+//Function to display attack stat
 function atk(){
 	$("#ATK").html("Attack: " + attack)
 }
 atk();
 
+//Function to reset combat data
 function resetCombat(){
 	turn = 1;
 	enemyhealth = 30;

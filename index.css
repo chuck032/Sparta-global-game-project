@@ -94,6 +94,13 @@ h3 {
   background-color: rgba(179,255,64,1);
 }
 
+.doorSprite{
+  width: 27px;
+  height: 27px;
+  background: url(sprites/gate.png) -20px 0px;
+  background-color: rgba(179,255,64,1);
+}
+
 .enemy {
   background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
   border-bottom: 3px black solid;
