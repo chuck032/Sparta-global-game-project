@@ -33,28 +33,28 @@ td {
   width: 27px;
   height: 27px;
   background: url(sprites/tree-variations_0.png) -5px -79px;
-  background-color: green;
+  background-color: rgba(179,255,64,1);
 }
 
 .tree2 {
  width: 27px;
  height: 27px;
  background: url(sprites/tree-variations_0.png) -129px -79px;
- background-color: green;
+ background-color: rgba(179,255,64,1);
 }
 
 .tree3 {
   width: 27px;
   height: 27px;
   background: url(sprites/tree-variations_0.png) -68px -79px;
-  background-color: green;
+  background-color: rgba(179,255,64,1);
 }
 
 .tree4 {
   width: 27px;
   height: 27px;
   background: url(sprites/tree-variations_0.png) -192px -79px;
-  background-color: green;
+  background-color: rgba(179,255,64,1);
 }
 
 .chestSprite {
@@ -69,4 +69,8 @@ td {
   height: 27px;
   background: url(sprites/chest_sheet.png) -5px -4px;
   background-color: rgba(179,255,64,1);
+}
+
+#healthBar {
+  width: 20%;
 }

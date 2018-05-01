@@ -14,7 +14,7 @@ var healthTotal = 10;
 
 
 $(document).keydown(function(e) {
-		// gameEnd();
+		statsBar();
     switch(e.which) {
 
         case 37: // left
@@ -119,6 +119,7 @@ function chestItem(){
 	} if (currentPosition.is('#74')|| currentPosition.is("#264")){
 		encounter = true;
 		console.log("Enemy encountered!!");
+		window.open('combat.html','GoogleWindow', 'width=800, height=600');
 		currentPosition.removeClass('chest');
 		currentPosition.addClass('chestSprite2')
 	} if (currentPosition.is('#256')|| currentPosition.is("#250")){
@@ -142,22 +143,14 @@ function chestItem(){
 		currentPosition.addClass('chestSprite2')
 }
 }
-//End game alert
-// function gameEnd() {
-// 	if (endId.hasClass('box')){
-// 		alert("END!");
+
+function statsBar(){
+	var health = $("#healthBar")
+	// health.value -= 10;
+}
+
+// function encounter(){
+// 	if (encounter == true){
+// 		window.open('combat.html','GoogleWindow', 'width=800, height=600');
 // 	}
 // }
-
-//timer
-// var seconds_left = 30;
-// var interval = setInterval(function() {
-//     document.getElementById('timer_div').innerHTML = "Time remaining: " + --seconds_left;
-//
-//     if (seconds_left <= 0)
-//     {
-//         document.getElementById('timer_div').innerHTML = 'You Lose!';
-// 				alert("You Lose!")
-//         clearInterval(interval);
-//     }
-// }, 1000);
