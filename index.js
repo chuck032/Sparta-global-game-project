@@ -23,8 +23,10 @@ var clicks = 0;
 
 var divBox = $('#chestItemText')
 
+
 //Hide combat UI
 combatFrame.hide();
+
 
 //arrow keys
 $(document).keydown(function(e) {
@@ -126,33 +128,44 @@ function chestItem(){
 		currentPosition.removeClass('chest');
 		swordMult = swordMult + 0.2;
 		console.log(swordMult);
-		currentPosition.addClass('chestSprite2')
-		$("#AMULTI").html("Attack Multiplyer: " + swordMult)
+		currentPosition.removeClass('chestSprite');
+		$("#AMULTI").html("Attack Multiplyer: " + swordMult);
 		discoverMult();
 	} if (currentPosition.is('#74')|| currentPosition.is("#264")|| currentPosition.is('#250')){
 		encounter = true;
-		currentPosition.removeClass('chest');
-		currentPosition.addClass('chestSprite2');
 		discoverTrap();
+		currentPosition.removeClass('chest');
+		currentPosition.removeClass('chestSprite');
 		$(".map").hide();
 		combatFrame.show();
+		divBox.show();
 	} if (currentPosition.is('#174')|| currentPosition.is("#135")||currentPosition.is('#256')){
 		health = true;
 		currentPosition.removeClass('chest');
+		if (healthTotal <= 80){
 		healthTotal = healthTotal + 20;
 		console.log(healthTotal);
-		currentPosition.addClass('chestSprite2')
+		currentPosition.removeClass('chestSprite');
 		$("#HP").html("Health: " + healthTotal);
 		discoverHealth();
+		userHP();
+		} if (healthTotal <= 100){
+		healthTotal = 100;
+		console.log(healthTotal);
+		currentPosition.removeClass('chestSprite');
+		$("#HP").html("Health: " + healthTotal);
+		discoverHealth();
+		userHP();
+		}
 	} if (currentPosition.is("#213")){
 		haveKey = true;
 		currentPosition.removeClass('chest');
-		currentPosition.addClass('chestSprite2')
+		currentPosition.removeClass('chestSprite');
 		discoverKey();
 	}
 }
 
-//Function for Door
+//Function for door
 function doorOpen(){
 	if (currentPosition.is('#298')) {
 		divBox.html("<h2>Currently under construction!</h2>")
@@ -164,7 +177,7 @@ function discoverMult(){
 divBox.html("<h2>You've discovered an attack multiplier! Your attacks do 0.2x more damage</h2>")
 }
 function discoverHealth(){
-divBox.html("<h2>You've discovered a health potion! Your health increased by 20hp</h2>")
+divBox.html("<h2>You've discovered a health potion! You have recovered 20hp</h2>")
 }
 function discoverKey(){
 divBox.html("<h2>You've discovered a Key! I wonder what it opens</h2>")
@@ -177,11 +190,11 @@ divBox.html("<h2>You've walked into a trap! Get ready for combat!</h2>")
 start.click(function(){
 	turns();
 	if (turn % 2 == 1){
-		textDesc.append("<li>It's your turn to attack</li>");
+		textDesc.append("<li class = 'userLog'>It's your turn to attack</li>");
 		start.html("Continue");
 		}
 	 if (turn % 2 == 0) {
-		 textDesc.append('<li>The enemy is attacking</li>');
+		 textDesc.append('<li class = "enemyLog">The enemy is attacking</li>');
 		 start.html("Continue");
 		enemyAtk();
 	} if (enemyhealth == 0 || healthTotal == 0) {
@@ -193,17 +206,18 @@ start.click(function(){
 
 //Attack button for combat
 attackBtn.click(function(){
-	var swordAtk = (attack*swordMult);
+
 	if(turn % 2 == 1){
+		var swordAtk = attack*swordMult;
 		if (enemyhealth >= swordAtk){
 		enemyhealth = enemyhealth - swordAtk;
-		textDesc.append('<li>You hit the enemy for ' + swordAtk + '</li>');
+		textDesc.append('<li class = "userLog">You hit the enemy for ' + swordAtk + '</li>');
 		enemyHP();
 		turn = turn + 1;
 		turns();
 		} else {
 		enemyhealth = 0;
-		textDesc.append('<li>You have defeated the enemy</li>');
+		textDesc.append('<li class = "userLog">You have defeated the enemy</li>');
 		enemyHP();
 		}
 	} else {
@@ -213,7 +227,7 @@ attackBtn.click(function(){
 
 //Run away button for combat
 runAway.click(function() {
-	sentenceArray = ['<li>Unable to run away, the enemy has you cornered!</li>',"<li>Looks like you'll have to fight your way out!</li>","<li>Seriously you're trapped</li>", "<li>Please stop...</li>" ]
+	sentenceArray = ['<li class = "userLog">Unable to run away, the enemy has you cornered!</li>',"<li class = 'userLog'>Looks like you'll have to fight your way out!</li>","<li class = 'userLog'>Seriously you're trapped</li>", "<li class = 'userLog'>Please stop...</li>" ]
 	textDesc.append(sentenceArray[clicks]);
 	clicks += 1;
 	return clicks
@@ -223,15 +237,15 @@ runAway.click(function() {
 function enemyAtk (){
 		if (healthTotal > 0){
 			healthTotal = healthTotal - 10;
-			textDesc.append('<li>You were hit for 10 damage</li>');
+			textDesc.append('<li class = "enemyLog">You were hit for 10 damage</li>');
 			userHP();
 			turn = turn + 1;
 			turns();
 			userHP();
-			return;
+			return healthTotal;
 		} else {
 			healthTotal = 0;
-			textDesc.append('<li>You have been defeated</li>');
+			textDesc.append('<li class ="enemyLog">You have been defeated</li>');
 			userHP();
 			return;
 		}
@@ -240,12 +254,14 @@ function enemyAtk (){
 //Function for enemy HP
 function enemyHP(){
 	$("#enemyHP").html("Health: " + enemyhealth);
+	$("#eHealth").val(enemyhealth);
 }
 enemyHP();
 
 //Function for user HP
 function userHP(){
 	$("#HP").html("Health: " + healthTotal);
+	$("#myHealth").val(healthTotal);
 }
 userHP();
 
