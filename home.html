@@ -4,28 +4,65 @@
     <meta charset="utf-8">
     <title>Pixel Adventure</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   </head>
   <body class="game-background">
-    <header>
-      <h1>Pixel Adventure</h1>
-    </header>
     <div class="container home-back">
       <div class="row">
-        <div class="col-md-3"> <img src="goblin.png" alt=""> </div>
-        <div class="col-md-6">
-          <a href="index.html"> <button type="button" name="button">Play</button> </a>
-          <button type="button" name="button">Instructions</button></div>
-        <div class="col-md-3"></div>
+        <div class="col-md-12 titleWords">
+          <h1 class="pixelTitle">Pixel </h1>
+          <h1 class="adventureTitle">Adventure</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-3">
+          <div class="fixed">
+            <p class="fixedP" >Adventurer! We are in dire need of your help! A group of goblins have attacked our village, we seek the help of a wandering traveller brave enough to deal with them. You will find them scattered throughout the goblin infested forest.</p>
+            <p class="fixedP">Are you ready to start your journey? Have you read the instructions?</p>
+            <p class="fixedP">Tip :  Keep on eye on you health, that pesky goblin damage hurts after a while.</p>
+              <img src="sprites/screenshot.png" alt="" class="screenshot">
+            <a href="index.html"> <button type="button" name="" class="playBtn">Play</button> </a><br>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="instructionP">
+          <h2 class="">Instructions</h2>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Movement</h3><br>
+              <p>Move around the map using the arrow keys</p>
+
+              <img src="sprites/arrowKeys.png" alt="directional arrow keys">
+            </div>
+            <hr>
+          </div>
+
+          <h3>Action</h3>
+          <p>To interract with ingame items use the 'F' key.</p>
+          <img src="sprites/chest_sheet.png" alt="Chest items">
+          <img src="sprites/gate.png" alt="Chest items">
+          <hr>
+
+          <h3>Combat</h3>
+          <p>When you enter an encounter with an enemy a combat screen will appear. </p>
+
+          <h4>Combat Interface</h4>
+          <p>Enemy</p>
+          Combat is turn based
+          <p class=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class=''>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div><!-- <img src="sprites/goblin.png" alt="" class="goblinImg"> -->
+        </div>
       </div>
     </div>
   <script src="index.js"></script>

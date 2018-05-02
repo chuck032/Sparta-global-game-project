@@ -1,3 +1,97 @@
+
+@font-face {
+    font-family: silkscreen;
+    src: url(bootstrap-3.3.7-dist/fonts/Silkscreen/slkscr.ttf);
+}
+
+@font-face {
+    font-family: silkscreenB;
+    src: url(bootstrap-3.3.7-dist/fonts/Silkscreen/slkscrb.ttf);
+}
+
+@font-face {
+    font-family: almendraSC;
+    src: url(bootstrap-3.3.7-dist/fonts/almendra/AlmendraSC-Regular.otf);
+}
+
+.titleWords{
+  text-align: center;
+  border: solid black 3px;
+}
+
+.pixelTitle {
+  font-family: silkscreen;
+  display: inline;
+}
+
+.adventureTitle {
+  font-family: almendraSC;
+  display: inline;
+}
+
+.playBtn{
+  font-family: almendraSC;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+  border-top: 3px solid black;
+}
+
+.goblinImg {
+  width: 30%;
+  height: 30%;
+  display: inline;
+}
+
+.fixed {
+  position: fixed;
+  top: 60px;
+  width: 25%;
+  border: black solid 3px;
+  background: linear-gradient(45deg, rgba(255,237,189,1) 0%, rgba(255,237,189,1) 96%, rgba(255,237,189,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+.screenshot {
+  border: 3px solid black;
+  border-radius: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.fixedP {
+  text-align: center;
+  float: left;
+  font-family: almendraSC;
+}
+
+.instructionP {
+  font-family: almendraSC;
+  margin-top: 10px;
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  float: right;
+  width: 72%;
+  border: 3px solid black;
+}
+
+#arrows {
+  float:right;
+  display: inline-block;
+  width: 20%;
+}
+
+.controls {
+  display: inline-block;
+}
+
+.para {
+  width: 75%;
+}
+
 table {
   border: 1px solid black;
   /* margin-top: 51px; */
@@ -38,7 +132,7 @@ h3 {
   background-color: blue;
   height: 27px;
   width: 27px;
-  background: url(sprites/knight.png) -6px -1px;
+  background: url(sprites/spartan.png) 0px -2px;
   z-index: 100;
 }
 
@@ -55,6 +149,13 @@ h3 {
   width: 27px;
   height: 27px;
   background-color: rgba(179,255,64,1);
+}
+
+.treeTitle{
+  width: 27px;
+  height: 27px;
+  object-fit: none;
+  object-position: 0 0;
 }
 
 .tree1 {
@@ -140,7 +241,19 @@ h3 {
   display: inline-block;
 }
 
-button {
+#start-battle {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#attack {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#run {
   width: 100%;
   border-radius: 10px;
   background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
@@ -153,14 +266,15 @@ button {
   overflow: scroll;
 }
 
-li {
+.userLog,
+.enemyLog {
   background-color: white;
-  margin-left: -36px;
+  margin-left: -40px;
   text-align: center;
   overflow: scroll;
 }
 
-ul {
+#text-desc {
   border: solid black 3px;
 }
 
@@ -170,9 +284,9 @@ ul {
 }
 
 .home-back {
-  background-image: url("https://img00.deviantart.net/a9c7/i/2009/320/1/a/forest_background_by_whitewolf16.png");
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
   background-size: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .userLog {
@@ -181,4 +295,8 @@ ul {
 
 .enemyLog {
   background: linear-gradient(45deg, rgba(255,109,87,1) 0%, rgba(255,109,87,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+progress {
+  background-color: green;
 }

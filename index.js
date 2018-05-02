@@ -174,7 +174,7 @@ function doorOpen(){
 
 //Message for chest discoveries
 function discoverMult(){
-divBox.html("<h2>You've discovered an attack multiplier! Your attacks do 0.2x more damage</h2>")
+divBox.html("<h2>You've discovered an attack multiplier! Your attack multiplier is increased by 0.2</h2>")
 }
 function discoverHealth(){
 divBox.html("<h2>You've discovered a health potion! You have recovered 20hp</h2>")
@@ -206,7 +206,6 @@ start.click(function(){
 
 //Attack button for combat
 attackBtn.click(function(){
-
 	if(turn % 2 == 1){
 		var swordAtk = attack*swordMult;
 		if (enemyhealth >= swordAtk){
@@ -288,3 +287,11 @@ function resetCombat(){
 	clicks = 0;
 	$('li').remove();
 }
+
+resetCombat()
+
+// function gameOver(){
+// 	if (healthTotal === 0){
+// 		window.open("gameOver.html")
+// 	}
+// }

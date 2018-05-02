@@ -5,16 +5,10 @@
     <title>Game</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="index.css">
+    <script src="boostrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body class="game-background">
     <audio autoplay="autoplay" loop="true">
@@ -23,7 +17,10 @@
     <div class="container">
       <!-- Text, to help you on your journey -->
       <div class="row">
-        <div class="col-md-12 map" id="chestItemText"></div>
+        <div class="col-md-12 map" id="chestItemText">
+          <h1 class="pixelTitle">Pixel </h1>
+          <h1 class="adventureTitle">Adventure</h1>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12 map">
@@ -374,7 +371,7 @@
           <div class="col-md-3 stats">
               <h1>stats</h1>
               <h3 id="HP"></h3><br>
-              <progress id="myHealth" value="100" max="100"></progress>
+              <progress id="myHealth" value="100" max="100"></progress><br>
               <h3 id="ATK"></h3><br>
               <h3 id="AMULTI"></h3><br>
               <h1>Combat Log</h1>
