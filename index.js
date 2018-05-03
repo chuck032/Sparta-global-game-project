@@ -16,14 +16,13 @@ var turn = 1;
 
 var start = $("#start-battle");
 var attackBtn = $("#attack");
-var hazstrike = $('#hazardousStrike')
+var reckStrike = $('#recklessStrike')
 
 var textDesc = $("#text-desc");
 var runAway = $("#run");
 var clicks = 0;
 
 var divBox = $('#chestItemText')
-
 
 //Hide combat UI
 combatFrame.hide();
@@ -124,52 +123,119 @@ function fKey(){
 
 //Chest items
 function chestItem(){
-	if (currentPosition.is('#29')|| currentPosition.is("#38")){
+	if (currentPosition.is('#28')){
 		sword = true;
 		currentPosition.removeClass('chest');
 		swordMult = swordMult + 0.2;
 		console.log(swordMult);
-		currentPosition.removeClass('chestSprite');
+		$('#29').removeClass('chestSprite');
+		$('#29').addClass('chestSprite2');
 		$("#AMULTI").html("Attack Multiplyer: " + swordMult);
 		discoverMult();
-	} if (currentPosition.is('#74')|| currentPosition.is("#264")|| currentPosition.is('#250')){
+	} if (currentPosition.is("#37")) {
+		sword = true;
+		currentPosition.removeClass('chest');
+		swordMult = swordMult + 0.2;
+		console.log(swordMult);
+		$('#38').removeClass('chestSprite');
+		$('#38').addClass('chestSprite2');
+		$("#AMULTI").html("Attack Multiplyer: " + swordMult);
+		discoverMult();
+	} if (currentPosition.is('#73')){
 		encounter = true;
 		discoverTrap();
 		currentPosition.removeClass('chest');
-		currentPosition.removeClass('chestSprite');
+		$('#74').removeClass('chestSprite');
+		$('#74').addClass('chestSprite2');
 		$(".map").hide();
 		combatFrame.show();
 		divBox.show();
-	} if (currentPosition.is('#174')|| currentPosition.is("#135")||currentPosition.is('#256')){
+	} if (currentPosition.is("#263")){
+		encounter = true;
+		discoverTrap();
+		currentPosition.removeClass('chest');
+		$('#264').removeClass('chestSprite');
+		$('#264').addClass('chestSprite2');
+		$(".map").hide();
+		combatFrame.show();
+		divBox.show();
+	} if (currentPosition.is('#273')) {
+		encounter = true;
+		discoverTrap();
+		currentPosition.removeClass('chest');
+		$('#250').removeClass('chestSprite');
+		$('#250').addClass('chestSprite2');
+		$(".map").hide();
+		combatFrame.show();
+		divBox.show();
+	} if (currentPosition.is('#173')){
 		health = true;
 		currentPosition.removeClass('chest');
 		if (healthTotal <= 80){
 		healthTotal = healthTotal + 20;
-		console.log(healthTotal);
-		currentPosition.removeClass('chestSprite');
+		$('#174').removeClass('chestSprite');
+		$('#174').addClass('chestSprite2');
 		$("#HP").html("Health: " + healthTotal);
 		discoverHealth();
 		userHP();
 		} if (healthTotal <= 100){
 		healthTotal = 100;
-		console.log(healthTotal);
-		currentPosition.removeClass('chestSprite');
+		$('#174').removeClass('chestSprite');
+		$('#174').addClass('chestSprite2');
 		$("#HP").html("Health: " + healthTotal);
 		discoverHealth();
 		userHP();
 		}
-	} if (currentPosition.is("#213")){
+	} if (currentPosition.is("#136")) {
+		health = true;
+		currentPosition.removeClass('chest');
+		if (healthTotal <= 80){
+		healthTotal = healthTotal + 20;
+		$('#135').removeClass('chestSprite');
+		$('#135').addClass('chestSprite2');
+		$("#HP").html("Health: " + healthTotal);
+		discoverHealth();
+		userHP();
+		} if (healthTotal <= 100){
+		healthTotal = 100;
+		$('#135').removeClass('chestSprite');
+		$('#135').addClass('chestSprite2');
+		$("#HP").html("Health: " + healthTotal);
+		discoverHealth();
+		userHP();
+		}
+	} if (currentPosition.is('#255')) {
+		health = true;
+		currentPosition.removeClass('chest');
+		if (healthTotal <= 80){
+		healthTotal = healthTotal + 20;
+		$('#256').removeClass('chestSprite');
+		$('#256').addClass('chestSprite2');
+		$("#HP").html("Health: " + healthTotal);
+		discoverHealth();
+		userHP();
+		} if (healthTotal <= 100){
+		healthTotal = 100;
+		$('#256').removeClass('chestSprite');
+		$('#256').addClass('chestSprite2');
+		$("#HP").html("Health: " + healthTotal);
+		discoverHealth();
+		userHP();
+		}
+	} if (currentPosition.is("#190")){
 		haveKey = true;
 		currentPosition.removeClass('chest');
-		currentPosition.removeClass('chestSprite');
+		$('#213').removeClass('chestSprite');
+		$('#213').addClass('chestSprite2');
 		discoverKey();
 	}
 }
 
 //Function for door
 function doorOpen(){
-	if (currentPosition.is('#298')) {
+	if (currentPosition.is('#275')) {
 		divBox.html("<h2>Currently under construction!</h2>")
+		$('.map').hide();
 	}
 }
 
@@ -191,11 +257,13 @@ divBox.html("<h2>You've walked into a trap! Get ready for combat!</h2>")
 start.click(function(){
 	turns();
 	if (turn % 2 == 1){
+		clearList();
 		textDesc.prepend("<li class = 'userLog'>It's your turn to attack</li>");
 		start.html("Continue");
 		}
 	 if (turn % 2 == 0) {
 		 enemyAtk();
+		 clearList();
 		 textDesc.prepend('<li class = "enemyLog">The enemy is attacking</li>');
 		 start.html("Continue");
 	} if (enemyhealth == 0 || healthTotal == 0) {
@@ -211,60 +279,68 @@ attackBtn.click(function(){
 		var swordAtk = attack*swordMult;
 		if (enemyhealth >= swordAtk){
 		enemyhealth = enemyhealth - swordAtk;
+		clearList();
 		textDesc.prepend('<li class = "userLog">You hit the enemy for ' + swordAtk + '</li>');
 		enemyHP();
 		turn = turn + 1;
 		turns();
 		} else {
 		enemyhealth = 0;
+		clearList();
 		textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
 		enemyHP();
 		}
 	} else {
+		clearList();
 		textDesc.prepend('<li class = "enemyLog">Not your turn. Click the continue button</li>');
 	return;
 	}
 });
 
-hazstrike.click(function(){
+reckStrike.click(function(){
 	if(turn % 2 == 1){
 		ranNum();
 		console.log(rng);
 		if (rng === 1) {
-			var hazStri = (attack*swordMult)*2;
-				if (enemyhealth >= hazStri){
-				enemyhealth = enemyhealth - hazStri;
-				textDesc.prepend('<li class = "userLog">You hit the enemy for ' + hazStri + '</li>');
+			var recStri = (attack*swordMult)*2;
+				if (enemyhealth >= recStri){
+				enemyhealth = enemyhealth - recStri;
+				clearList();
+				textDesc.prepend('<li class = "userLog">You hit the enemy for ' + recStri + '</li>');
 				enemyHP();
 				turn = turn + 1;
 				turns();
 				} else {
 				enemyhealth = 0;
+				clearList();
 				textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
 				enemyHP();
 				}
 		}	else {
+			clearList();
 			textDesc.prepend('<li class = "userLog">Your attack missed the enemy</li>');
 			enemyHP();
 			turn = turn + 1;
 			turns();
 		}
 	}else {
+		clearList();
 		textDesc.prepend('<li class = "enemyLog">Not your turn. Click the continue button</li>');
 	return;
 	}
 });
 
+//Random number generator
 function ranNum(){
 	var numArray = [1,2,3];
 	rng = numArray[Math.floor(Math.random() * 3 )];
 	return rng;
 }
-ranNum();
-console.log(rng);
+
 //Run away button for combat
 runAway.click(function() {
 	sentenceArray = ['<li class = "userLog">Unable to run away, the enemy has you cornered!</li>',"<li class = 'userLog'>Looks like you'll have to fight your way out!</li>","<li class = 'userLog'>Seriously you're trapped</li>", "<li class = 'userLog'>Please stop...</li>" ]
+	clearList();
 	textDesc.prepend(sentenceArray[clicks]);
 	clicks += 1;
 	return clicks
@@ -274,6 +350,7 @@ runAway.click(function() {
 function enemyAtk (){
 		if (healthTotal > 0){
 			healthTotal = healthTotal - 10;
+			clearList();
 			textDesc.prepend('<li class = "enemyLog">You were hit for 10 damage</li>');
 			userHP();
 			turn = turn + 1;
@@ -282,6 +359,7 @@ function enemyAtk (){
 			return healthTotal;
 		} else {
 			healthTotal = 0;
+			clearList();
 			textDesc.prepend('<li class ="enemyLog">You have been defeated</li>');
 			userHP();
 			return;
@@ -327,6 +405,15 @@ function resetCombat(){
 }
 
 resetCombat()
+
+//Clear last item on list
+function clearList(){
+	if ($("#text-desc li").length > 5){
+		$('#text-desc li').last().remove();
+	}
+}
+
+
 
 // function gameOver(){
 // 	if (healthTotal === 0){

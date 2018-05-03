@@ -139,7 +139,7 @@ h3 {
   background-color: blue;
   height: 27px;
   width: 27px;
-  background: url(sprites/spartan.png) 0px -2px;
+  background: url(sprites/spartan.png) -10px -5px;
   z-index: 100;
 }
 
@@ -266,16 +266,16 @@ h3 {
   background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
 }
 
-#hazardousStrike {
+#recklessStrike {
   width: 100%;
   border-radius: 10px;
   background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
 }
 
-#goblin {
+/* #goblin {
   width:450px;
   height:450px;
-}
+} */
 
 .scrollText {
   background-color: white;
