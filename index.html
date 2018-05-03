@@ -11,10 +11,23 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body class="game-background">
+
+    <!-- Audio background Music-->
     <audio autoplay="autoplay" loop="true">
      <source src="music/zelda-overworld.mp3" />
-   </audio>
-   <audio id="chestOpen" src="music/chestopen.mp3" ></audio>
+    </audio>
+
+    <!-- Escape Screen div -->
+    <div class="container">
+     <div class="escapeScreen">
+       <h1 class="pixelTitle">Pixel </h1>
+       <h1 class="adventureTitle">Adventure</h1><br>
+       <a href="home.html"><button type="button" name="" id="homeScreen">Home</button></a>
+       <img src="sprites/spartan.png" alt="picture of spartan">
+       <a href="index.html"><button type="button" name="" id="restart">Restart</button></a>
+     </div>
+    </div>
+
     <div class="container">
       <!-- Text, to help you on your journey -->
       <div class="row">
@@ -356,93 +369,91 @@
         </div>
       </div>
     </div>
+
+    <!-- Combat Frame div -->
     <div class="container combat-frame">
       <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-4 enemy">
-                <h1>Goblin</h1>
-                <h3 id="enemyHP"></h3>
-                <progress id="eHealth" value="30" max="30"></progress>
-                <button type="button" name="" id="start-battle"> Start Battle</button>
-                <h3 id="turnCount"></h3>
-              </div>
-              <div class="col-md-8 enemyPic"> <img src="sprites/goblin.png" id="goblin"> </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4 enemy">
+              <h1>Goblin</h1>
+              <h3 id="enemyHP"></h3>
+              <progress id="eHealth" value="30" max="30"></progress>
+              <button type="button" name="" id="start-battle"> Enemy attack</button>
+              <h3 id="turnCount"></h3>
             </div>
-          </div>
-          <div class="col-md-3 stats">
-              <h1>Adventurer stats</h1>
-              <h3 id="HP"></h3><br>
-              <progress id="myHealth" value="100" max="100"></progress><br>
-              <h3 id="ATK"></h3><br>
-              <h3 id="AMULTI"></h3><br>
-              <h1>Combat Log</h1>
-              <ul id="text-desc"></ul>
+            <div class="col-md-8 enemyPic"> <img src="sprites/goblin.png" id="goblin"> </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 abilities">
-              <h1 id="abilitiesTitle">Adventurer Abilities</h1>
-
-              <div class="row">
-                <div class="col-md-12"></div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10"></div>
-                <div class="col-md-1"></div>
-              </div>
-
-              <div class="row abilities-row1">
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3">
-                  <button type="button" name="" id="attack">Attack</button>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-3">
-                  <button type="button" name="" id="run">Run</button>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10"></div>
-                <div class="col-md-1"></div>
-              </div>
-
-              <div class="row abilities-row1">
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3">
-                  <button type="button" name="" id="recklessStrike">Reckless Strike</button>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-3">
-
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10"></div>
-                <div class="col-md-1"></div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12"></div>
-              </div>
-
+        <div class="col-md-3 stats">
+          <h1>Adventurer stats</h1>
+          <h3 id="HP"></h3><br>
+          <progress id="myHealth" value="100" max="100"></progress><br>
+          <h3 id="ATK"></h3><br>
+          <h3 id="AMULTI"></h3><br>
+          <h1>Combat Log</h1>
+          <ul id="text-desc"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 abilities">
+          <h1 id="abilitiesTitle">Adventurer Abilities</h1>
+          <div class="row abilities-row1">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <button type="button" name="" id="attack">Attack</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+              <button type="button" name="" id="recklessStrike">Reckless Strike</button>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+          </div>
+          <div class="row abilities-row1">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <button type="button" name="" id="run">Run</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Win Screen div -->
+    <div class="container">
+      <div class="winScreen">
+        <h1 class="pixelTitle">Pixel </h1>
+        <h1 class="adventureTitle">Adventure</h1>
+        <h1>Congratulations!!</h1>
+        <h2>You've completed your first adventure!</h2>
+        <h2>Thank you for playing.</h2>
+        <h2>The next adventure will be released soon.</h2>
+        <a href="home.html"><button type="button" name="" id="homeScreen">Home</button></a>
+        <img src="sprites/spartan.png" alt="picture of spartan">
+        <a href="index.html"><button type="button" name="" id="restart">Play Again</button></a>
+      </div>
+    </div>
+
+    <!-- Lose Screen div -->
+    <div class="container">
+      <div class="loseScreen">
+        <h1 class="pixelTitle">Pixel </h1>
+        <h1 class="adventureTitle">Adventure</h1>
+        <h1>You lose!</h1>
+        <h2>You've failed your first adventure!</h2>
+        <h2>Unlucky. Try again?</h2>
+        <a href="home.html"><button type="button" name="" id="homeScreen">Home</button></a>
+        <img src="sprites/spartan.png" alt="picture of spartan">
+        <a href="index.html"><button type="button" name="" id="restart">Play Again</button></a>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
-
 </html>
