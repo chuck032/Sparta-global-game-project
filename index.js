@@ -16,6 +16,7 @@ var turn = 1;
 
 var start = $("#start-battle");
 var attackBtn = $("#attack");
+var hazstrike = $('#hazardousStrike')
 
 var textDesc = $("#text-desc");
 var runAway = $("#run");
@@ -190,13 +191,13 @@ divBox.html("<h2>You've walked into a trap! Get ready for combat!</h2>")
 start.click(function(){
 	turns();
 	if (turn % 2 == 1){
-		textDesc.append("<li class = 'userLog'>It's your turn to attack</li>");
+		textDesc.prepend("<li class = 'userLog'>It's your turn to attack</li>");
 		start.html("Continue");
 		}
 	 if (turn % 2 == 0) {
-		 textDesc.append('<li class = "enemyLog">The enemy is attacking</li>');
+		 enemyAtk();
+		 textDesc.prepend('<li class = "enemyLog">The enemy is attacking</li>');
 		 start.html("Continue");
-		enemyAtk();
 	} if (enemyhealth == 0 || healthTotal == 0) {
 		$(".map").show();
 		combatFrame.hide();
@@ -210,24 +211,61 @@ attackBtn.click(function(){
 		var swordAtk = attack*swordMult;
 		if (enemyhealth >= swordAtk){
 		enemyhealth = enemyhealth - swordAtk;
-		textDesc.append('<li class = "userLog">You hit the enemy for ' + swordAtk + '</li>');
+		textDesc.prepend('<li class = "userLog">You hit the enemy for ' + swordAtk + '</li>');
 		enemyHP();
 		turn = turn + 1;
 		turns();
 		} else {
 		enemyhealth = 0;
-		textDesc.append('<li class = "userLog">You have defeated the enemy</li>');
+		textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
 		enemyHP();
 		}
 	} else {
+		textDesc.prepend('<li class = "enemyLog">Not your turn. Click the continue button</li>');
 	return;
 	}
 });
 
+hazstrike.click(function(){
+	if(turn % 2 == 1){
+		ranNum();
+		console.log(rng);
+		if (rng === 1) {
+			var hazStri = (attack*swordMult)*2;
+				if (enemyhealth >= hazStri){
+				enemyhealth = enemyhealth - hazStri;
+				textDesc.prepend('<li class = "userLog">You hit the enemy for ' + hazStri + '</li>');
+				enemyHP();
+				turn = turn + 1;
+				turns();
+				} else {
+				enemyhealth = 0;
+				textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
+				enemyHP();
+				}
+		}	else {
+			textDesc.prepend('<li class = "userLog">Your attack missed the enemy</li>');
+			enemyHP();
+			turn = turn + 1;
+			turns();
+		}
+	}else {
+		textDesc.prepend('<li class = "enemyLog">Not your turn. Click the continue button</li>');
+	return;
+	}
+});
+
+function ranNum(){
+	var numArray = [1,2,3];
+	rng = numArray[Math.floor(Math.random() * 3 )];
+	return rng;
+}
+ranNum();
+console.log(rng);
 //Run away button for combat
 runAway.click(function() {
 	sentenceArray = ['<li class = "userLog">Unable to run away, the enemy has you cornered!</li>',"<li class = 'userLog'>Looks like you'll have to fight your way out!</li>","<li class = 'userLog'>Seriously you're trapped</li>", "<li class = 'userLog'>Please stop...</li>" ]
-	textDesc.append(sentenceArray[clicks]);
+	textDesc.prepend(sentenceArray[clicks]);
 	clicks += 1;
 	return clicks
 })
@@ -236,7 +274,7 @@ runAway.click(function() {
 function enemyAtk (){
 		if (healthTotal > 0){
 			healthTotal = healthTotal - 10;
-			textDesc.append('<li class = "enemyLog">You were hit for 10 damage</li>');
+			textDesc.prepend('<li class = "enemyLog">You were hit for 10 damage</li>');
 			userHP();
 			turn = turn + 1;
 			turns();
@@ -244,7 +282,7 @@ function enemyAtk (){
 			return healthTotal;
 		} else {
 			healthTotal = 0;
-			textDesc.append('<li class ="enemyLog">You have been defeated</li>');
+			textDesc.prepend('<li class ="enemyLog">You have been defeated</li>');
 			userHP();
 			return;
 		}

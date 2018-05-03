@@ -13,7 +13,7 @@
   <body class="game-background">
     <audio autoplay="autoplay" loop="true">
      <source src="music/zelda-overworld.mp3" />
- </audio>
+   </audio>
     <div class="container">
       <!-- Text, to help you on your journey -->
       <div class="row">
@@ -364,12 +364,13 @@
                 <h3 id="enemyHP"></h3>
                 <progress id="eHealth" value="30" max="30"></progress>
                 <button type="button" name="" id="start-battle"> Start Battle</button>
+                <h3 id="turnCount"></h3>
               </div>
-              <div class="col-md-8 enemyPic"> <h3 id="turnCount"></h3><img src="sprites/goblin.png" id="goblin"> </div>
+              <div class="col-md-8 enemyPic"> <img src="sprites/goblin.png" id="goblin"> </div>
             </div>
           </div>
           <div class="col-md-3 stats">
-              <h1>stats</h1>
+              <h1>Adventurer stats</h1>
               <h3 id="HP"></h3><br>
               <progress id="myHealth" value="100" max="100"></progress><br>
               <h3 id="ATK"></h3><br>
@@ -381,7 +382,7 @@
 
         <div class="row">
           <div class="col-md-12 abilities">
-              <h1>abilities</h1>
+              <h1 id="abilitiesTitle">Adventurer Abilities</h1>
 
               <div class="row">
                 <div class="col-md-12"></div>
@@ -417,6 +418,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
+                  <button type="button" name="" id="hazardousStrike">Hazardous Strike</button>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
