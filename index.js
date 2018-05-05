@@ -26,6 +26,9 @@ var clicks = 0;
 //Text description
 var divBox = $('#chestItemText');
 
+var bgMusic = document.getElementById("bgMusic");
+bgMusic.volume = 0.2;
+bgMusic.play();
 //Hide combat frame
 combatFrame.hide();
 $('.winScreen').hide(); //hide win screen
