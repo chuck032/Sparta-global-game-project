@@ -326,6 +326,7 @@ attackBtn.click(function(){
 			enemyHP();
 			turn = turn + 1;
 			turns();
+      enemyAtk();
 		} else {
 			enemyHealth = 0;
 			clearList();
@@ -352,6 +353,7 @@ reckStrike.click(function(){
 					enemyHP();
 					turn = turn + 1;
 					turns();
+          enemyAtk();
 				} else {
 					enemyHealth = 0;
 					clearList();
@@ -364,6 +366,7 @@ reckStrike.click(function(){
 			enemyHP();
 			turn = turn + 1;
 			turns();
+      enemyAtk();
 		}
 	} else {
 		clearList();
@@ -389,7 +392,12 @@ runAway.click(function() {
 })
 
 //AI attack
-function enemyAtk (){
+function enemyAtk(){
+  if (enemyHealth == 0) {
+    clearList();
+    textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
+    enemyHP();
+  } else {
 	if (healthTotal >= 20 ){
 		healthTotal = healthTotal - 20;
 		clearList();
@@ -405,7 +413,7 @@ function enemyAtk (){
 		textDesc.prepend('<li class ="enemyLog">You have been defeated</li>');
 		userHP();
 		return;
-	}
+	}}
 }
 
 //Function for enemy HP
