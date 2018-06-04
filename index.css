@@ -1,0 +1,372 @@
+
+/* fonts */
+/* Pixel font style */
+@font-face {
+    font-family: silkscreen;
+    src: url(bootstrap-3.3.7-dist/fonts/Silkscreen/slkscr.ttf);
+}
+
+/* Fantasy font style */
+@font-face {
+    font-family: almendraSC;
+    src: url(bootstrap-3.3.7-dist/fonts/almendra/AlmendraSC-Regular.otf);
+}
+
+/* home.html CSS */
+
+.home-back {
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  background-size: 100%;
+}
+
+/* Title div CSS */
+
+.titleWords{
+  text-align: center;
+  border: solid black 3px;
+}
+
+.pixelTitle {
+  font-family: silkscreen;
+  display: inline;
+  font-size: 62px;
+}
+
+.adventureTitle {
+  font-family: almendraSC;
+  display: inline;
+  font-size: 62px;
+}
+
+/* Fixed side div CSS */
+.playBtn{
+  font-family: almendraSC;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+  border-top: 3px solid black;
+}
+
+.fixed {
+  position: fixed;
+  top: 26%;
+  width: 25%;
+  border: black solid 3px;
+  background: linear-gradient(45deg, rgba(255,237,189,1) 0%, rgba(255,237,189,1) 96%, rgba(255,237,189,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+.fixedP {
+  text-align: center;
+  float: left;
+  font-family: almendraSC;
+}
+
+.screenshot {
+  border: 3px solid black;
+  border-radius: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+/* Instructions CSS */
+
+.instructionP {
+  font-family: almendraSC;
+  margin-top: 10px;
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  float: right;
+  width: 72%;
+  border: 3px solid black;
+  padding-left: 10px;
+}
+
+#keysImg {
+  padding-left: 32%;
+}
+
+#escImg {
+  padding-left: 42%;
+}
+
+#chestSS {
+  padding-left: 15%;
+  padding-bottom: 7%;
+}
+
+#combatScreen{
+  padding-left: 15%;
+}
+
+/* Buttons for Escape/win/lose screen */
+
+#restart {
+  width: 25%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#homeScreen {
+  width: 25%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+
+/* Escape Screen CSS */
+
+.escapeScreen {
+  border: black 3px solid;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  width:100%;
+  height:700px;
+  font-family: almendraSC;
+  padding-top: 29%;
+}
+
+/* Win Screen CSS */
+
+.winScreen {
+  border: black 3px solid;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  width:100%;
+  height:700px;
+  font-family: almendraSC;
+  padding-top: 15%;
+}
+
+/* Lose screen CSS */
+
+.loseScreen {
+  border: black 3px solid;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  width:100%;
+  height:700px;
+  font-family: almendraSC;
+  padding-top: 15%;
+}
+
+/* index/game html CSS  */
+
+.game-background {
+  background-image: url('https://img00.deviantart.net/56f7/i/2015/302/f/5/basic_2d_forest_background_by_sonnysketch-d9eujn7.png');
+  background-size: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-family: almendraSC;
+}
+
+h2 {
+  text-align: center;
+  font-family: almendraSC;
+}
+
+h3 {
+  display: inline-block;
+  font-family: almendraSC;
+}
+
+/* Player/user CSS */
+
+.box {
+  background-color: blue;
+  height: 27px;
+  width: 27px;
+  background: url(sprites/spartan.png) -10px -5px;
+  z-index: 100;
+}
+
+/* Grid/maze CSS */
+
+table {
+  border: 1px solid black;
+}
+
+td {
+  padding: 27px;
+}
+
+.map {
+  text-align: center;
+  padding:0;
+}
+
+.wall {
+  background-color: green;
+}
+
+.treeTitle{
+  width: 27px;
+  height: 27px;
+  object-fit: none;
+  object-position: 0 0;
+}
+
+.tree1 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -5px -79px;
+  background-color: rgba(179,255,64,1);
+}
+
+.tree2 {
+ width: 27px;
+ height: 27px;
+ background: url(sprites/tree-variations_0.png) -129px -79px;
+ background-color: rgba(179,255,64,1);
+}
+
+.tree3 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -68px -79px;
+  background-color: rgba(179,255,64,1);
+}
+
+.tree4 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/tree-variations_0.png) -192px -79px;
+  background-color: rgba(179,255,64,1);
+}
+
+.terrain-grass {
+  width: 27px;
+  height: 27px;
+  background-color: rgba(179,255,64,1);
+}
+
+/* chest CSS */
+.chestSprite {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/chest_sheet.png) -5px -78px;
+  background-color: rgba(179,255,64,1);
+  z-index: 1;
+}
+
+.chestSprite2 {
+  width: 27px;
+  height: 27px;
+  background: url(sprites/chest_sheet.png) -5px -4px;
+  background-color: rgba(179,255,64,1);
+  z-index: 2;
+}
+
+/* Door CSS */
+
+.doorSprite{
+  width: 27px;
+  height: 27px;
+  background: url(sprites/gate.png) -20px 0px;
+  background-color: rgba(179,255,64,1);
+}
+
+/* Div at top of game CSS */
+
+#chestItemText {
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  width: 100%;
+}
+
+/* Combatframe CSS */
+
+.enemyPic {
+  display: inline-block;
+}
+
+.enemy {
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  border-bottom: 3px black solid;
+  border-right: 3px black solid;
+}
+
+.stats {
+  background: linear-gradient(45deg, rgba(255,234,219,1) 0%, rgba(255,234,219,1) 99%, rgba(0,128,128,1) 100%);
+  height: 623px;
+  border-left: 3px solid black
+}
+
+.abilities {
+  background: linear-gradient(45deg, rgba(105,255,240,1) 0%, rgba(0,128,128,1) 100%);
+  width: 100%;
+  border-top: 3px solid black;
+}
+
+.combat-text {
+  background-color: yellow;
+}
+
+.combat-frame {
+  background-color: rgba(179,255,64,1);
+  border: 3px solid black;
+}
+
+.abilities-frame {
+  background-color: red;
+  display: inline-block;
+}
+
+#start-battle {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#attack {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#run {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+#recklessStrike {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(212,253,255,1) 0%, rgba(212,253,255,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+.scrollText {
+  background-color: white;
+  padding: 0;
+  width: 80%;
+  overflow: scroll;
+}
+
+.userLog,
+.enemyLog {
+  background-color: white;
+  margin-left: -40px;
+  text-align: center;
+  overflow: scroll;
+}
+
+#text-desc {
+  border: solid black 3px;
+}
+
+.userLog {
+  background: linear-gradient(45deg, rgba(110,255,43,1) 0%, rgba(110,255,43,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+.enemyLog {
+  background: linear-gradient(45deg, rgba(255,109,87,1) 0%, rgba(255,109,87,1) 99%, rgba(0,128,128,1) 100%);
+}
+
+progress {
+  background-color: green;
+}
