@@ -29,6 +29,7 @@ var divBox = $('#chestItemText');
 var bgMusic = document.getElementById("bgMusic");
 bgMusic.volume = 0.2;
 bgMusic.play();
+
 //Hide combat frame
 combatFrame.hide();
 $('.winScreen').hide(); //hide win screen
@@ -139,23 +140,14 @@ function fKey(){
 function escKey(){
 	switch (escapeKey) {
 		case false:
-			switch (encounter) {
-				case false:
-					$(".escapeScreen").show();
-					hideCombat();
-					divBox.hide();
-					escapeKey = true;
-					break;
-				case true:
-					$(".escapeScreen").show();
-					combatFrame.hide();
-					divBox.hide();
-					escapeKey = true;
-				default:
-			}
-			break;
+			$(".escapeScreen").show();
+			$('.map').hide();
+			divBox.hide();
+			combatFrame.hide();
+			escapeKey = true;
+      break;
 		case true:
-		switch (encounter) {
+		  switch (encounter) {
 			case false:
 				$(".escapeScreen").hide();
 				$('.map').show();
@@ -165,6 +157,7 @@ function escKey(){
 			case true:
 				$(".escapeScreen").hide();
 				combatFrame.show();
+        console.log("in combat");
 				divBox.show();
 				escapeKey = false;
 			default:
@@ -196,7 +189,8 @@ function chestItem(){
 		discoverTrap();
 		currentPosition.removeClass('chest');
 		$('#74').removeClass('chestSprite').addClass('chestSprite2');
-		hideCombat();
+		$('.map').hide();
+    resetCombat();
 		combatFrame.show();
 		divBox.show();
 	} if (currentPosition.is("#263")){
@@ -204,7 +198,8 @@ function chestItem(){
 		discoverTrap();
 		currentPosition.removeClass('chest');
 		$('#264').removeClass('chestSprite').addClass('chestSprite2');
-		hideCombat();
+		$('.map').hide();
+    resetCombat();
 		combatFrame.show();
 		divBox.show();
 	} if (currentPosition.is('#273')) {
@@ -212,7 +207,8 @@ function chestItem(){
 		discoverTrap();
 		currentPosition.removeClass('chest');
 		$('#250').removeClass('chestSprite').addClass('chestSprite2');
-		hideCombat();
+		$('.map').hide();
+    resetCombat();
 		combatFrame.show();
 		divBox.show();
 	} if (currentPosition.is('#173')){
@@ -275,7 +271,7 @@ function chestItem(){
 function doorOpen(){
 	if (currentPosition.is('#275')) {
 		divBox.html("<h2>Currently under construction!</h2>");
-		hideCombat();
+		$('.map').hide();
 		$('.winScreen').show();
 	}
 }
@@ -302,7 +298,7 @@ start.click(function(){
 		combatFrame.hide();
 		resetCombat();
 	} if (healthTotal === 0) {
-		hideCombat();
+		$('.map').hide();
 		combatFrame.hide();
 		$('.loseScreen').show();
 	} if (turn % 2 == 1){
@@ -397,6 +393,7 @@ function enemyAtk(){
     clearList();
     textDesc.prepend('<li class = "userLog">You have defeated the enemy</li>');
     enemyHP();
+    return encounter = false;
   } else {
 	if (healthTotal >= 20 ){
 		healthTotal = healthTotal - 20;
@@ -450,6 +447,7 @@ atk();
 function resetCombat(){
 	turn = 1;
 	enemyHealth = 30;
+  enemyHP();
 	clicks = 0;
 	$('li').remove();
 }
@@ -461,11 +459,4 @@ function clearList(){
 	if ($("#text-desc li").length > 5){
 		$('#text-desc li').last().remove();
 	}
-}
-
-function hideCombat(){
-	$('.map').hide();
-	var enemyHealth = 30;
-	enemyHP();
-	return;
 }
